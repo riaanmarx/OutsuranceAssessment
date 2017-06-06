@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutsuranceAssessment", "OutsuranceAssesment\OutsuranceAssessment.csproj", "{67443621-0970-44EC-BB51-C0D429349E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests_OutsuranceAssesment", "UnitTestProject1\UnitTests_OutsuranceAssesment.csproj", "{54039CE5-0EC9-4607-AB63-3319D2C8E5DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67443621-0970-44EC-BB51-C0D429349E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67443621-0970-44EC-BB51-C0D429349E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67443621-0970-44EC-BB51-C0D429349E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67443621-0970-44EC-BB51-C0D429349E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54039CE5-0EC9-4607-AB63-3319D2C8E5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54039CE5-0EC9-4607-AB63-3319D2C8E5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54039CE5-0EC9-4607-AB63-3319D2C8E5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54039CE5-0EC9-4607-AB63-3319D2C8E5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UnitTestProject1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TestCSVFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\my documents\visual studio 2015\Projects\OutsuranceAssesment\UnitTestProject1\Resources\data.csv</Value>
+    </Setting>
+    <Setting Name="TestCSVTargetPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\temp\outTest.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
