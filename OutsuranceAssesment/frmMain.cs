@@ -109,6 +109,18 @@ namespace OutsuranceAssesment
 		}
 
 		/// <summary>
+		/// Extract the street name from an address line which is in the form "XX YYY ZZ"
+		/// where XX is the number, YY is the street name and ZZ is an indication of the street "type"(Rd, street, avenue,road etc.)
+		/// </summary>
+		/// <param name="addressline"></param>
+		/// <returns></returns>
+		private string ExtractStreetname(string addressline)
+		{
+			// split the line using spaces, and report the second element
+			return addressline.Split(' ')[1];
+		}
+
+		/// <summary>
 		/// Construct a DataTable containing the Address data, and a derived separate [Streetname] column
 		/// </summary>
 		/// <param name="source">DataTable containing original data as retrieved from CSV file</param>
@@ -120,7 +132,7 @@ namespace OutsuranceAssesment
 					select new
 					{
 						Address = row.Field<string>("Address"),
-						Streetname = row.Field<string>("Address").Split(' ')[1]
+						Streetname = ExtractStreetname(row.Field<string>("Address"))
 					}).ToDataTable();
 		}
 
