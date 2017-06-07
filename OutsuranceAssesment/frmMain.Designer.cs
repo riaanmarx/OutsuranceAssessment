@@ -196,7 +196,7 @@
 			this.btnOpenAddressFile.Name = "btnOpenAddressFile";
 			this.btnOpenAddressFile.Size = new System.Drawing.Size(104, 23);
 			this.btnOpenAddressFile.TabIndex = 7;
-			this.btnOpenAddressFile.Text = "Open Address file";
+			this.btnOpenAddressFile.Text = "Open address file";
 			this.btnOpenAddressFile.UseVisualStyleBackColor = true;
 			this.btnOpenAddressFile.Click += new System.EventHandler(this.btnOpenAddressFile_Click);
 			// 
