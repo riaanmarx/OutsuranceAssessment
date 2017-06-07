@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OutsuranceAssesment.Extensions;
 using System.Threading;
+using System.Diagnostics;
 
 namespace OutsuranceAssesment
 {
@@ -19,6 +20,12 @@ namespace OutsuranceAssesment
 	/// </summary>
 	public partial class frmMain : Form
 	{
+		#region // Constants ...
+		const string OUTPUTPATH_NAMES = "Output1.txt";
+		const string OUTPUTPATH_ADDRESSES = "Output2.txt";
+		#endregion
+
+
 		#region // Form constructor ...
 		public frmMain()
 		{
@@ -76,6 +83,16 @@ namespace OutsuranceAssesment
 			dlgPickOutputFolder.SelectedPath = exeFolderPath;
 		}
 		
+		/// <summary>
+		/// Launch a file using the default OS editor
+		/// </summary>
+		/// <param name="file"></param>
+		private void LaunchFile(string fileName)
+		{
+			// launch a new process for the specified file
+			Process.Start(fileName);
+		}
+
 		#endregion
 		
 		#region // Processing-related functions ...
@@ -169,7 +186,7 @@ namespace OutsuranceAssesment
 					results.DefaultView.Sort = "Frequency DESC, Name ASC";
 
 					// write the view to the output file
-					string outputPath = Path.Combine(args.OutputFolder, "output1.txt");
+					string outputPath = Path.Combine(args.OutputFolder, OUTPUTPATH_NAMES);
 					results.DefaultView.ToTable()
 						.WriteToCSV(outputPath, false);
 					#endregion
@@ -188,7 +205,7 @@ namespace OutsuranceAssesment
 					resultsAddresses.DefaultView.Sort = "Streetname ASC";
 
 					// write the view contents to the output file
-					outputPath = Path.Combine(args.OutputFolder, "output2.txt");
+					outputPath = Path.Combine(args.OutputFolder, OUTPUTPATH_ADDRESSES);
 					resultsAddresses.DefaultView.ToTable()
 						.WriteToCSV(outputPath, false, new string[] { "Address" });
 					#endregion
@@ -236,9 +253,16 @@ namespace OutsuranceAssesment
 			// enable the process button, so the file can be processed again
 			btnProcess.Enabled = true;
 
-			// show a message when completed successfully
+			// if the file was processed successfully,
 			if (e.Error == null)
+			{
+				// enable the result buttons
+				btnOpenAddressFile.Enabled = true;
+				btnOpenNamesFile.Enabled = true;
+
+				// show a message when completed successfully
 				MessageBox.Show($"File was processed successfully");
+			}
 		}
 
 		#endregion
@@ -378,7 +402,30 @@ namespace OutsuranceAssesment
 				MessageBox.Show($"An exception occurred while opening the pick output folder dialog: {ex.Message}");
 			}
 		}
+		
+		/// <summary>
+		/// Event handler: btnOpenNamesFile.Click
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenNamesFile_Click(object sender, EventArgs e)
+		{
+			// construct the output file path
+			string filePath = Path.Combine(tbOuputFolder.Text, OUTPUTPATH_NAMES);
+			LaunchFile(filePath);
+		}
 
+		/// <summary>
+		/// Event handler: btnOpenAddressFile.Click
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnOpenAddressFile_Click(object sender, EventArgs e)
+		{
+			// construct the output file path
+			string filePath = Path.Combine(tbOuputFolder.Text, OUTPUTPATH_ADDRESSES);
+			LaunchFile(filePath);
+		}
 		#endregion
 	}
 }

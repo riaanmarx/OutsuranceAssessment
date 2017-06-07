@@ -43,6 +43,8 @@
 			this.dlgPickOutputFolder = new System.Windows.Forms.FolderBrowserDialog();
 			this.dlgOpenSourceFile = new System.Windows.Forms.OpenFileDialog();
 			this.bwFileProcessor = new System.ComponentModel.BackgroundWorker();
+			this.btnOpenNamesFile = new System.Windows.Forms.Button();
+			this.btnOpenAddressFile = new System.Windows.Forms.Button();
 			this.ssStatusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -107,9 +109,9 @@
 			// btnProcess
 			// 
 			this.btnProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnProcess.Location = new System.Drawing.Point(510, 76);
+			this.btnProcess.Location = new System.Drawing.Point(408, 72);
 			this.btnProcess.Name = "btnProcess";
-			this.btnProcess.Size = new System.Drawing.Size(116, 23);
+			this.btnProcess.Size = new System.Drawing.Size(218, 23);
 			this.btnProcess.TabIndex = 5;
 			this.btnProcess.Text = "Process";
 			this.btnProcess.UseVisualStyleBackColor = true;
@@ -122,7 +124,7 @@
             this.tslblStatus,
             this.tsSpring,
             this.tsProgressBar});
-			this.ssStatusStrip.Location = new System.Drawing.Point(0, 108);
+			this.ssStatusStrip.Location = new System.Drawing.Point(0, 136);
 			this.ssStatusStrip.Name = "ssStatusStrip";
 			this.ssStatusStrip.Size = new System.Drawing.Size(638, 22);
 			this.ssStatusStrip.TabIndex = 6;
@@ -174,11 +176,37 @@
 			this.bwFileProcessor.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bwFileProcessor_ProgressChanged);
 			this.bwFileProcessor.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwFileProcessor_RunWorkerCompleted);
 			// 
+			// btnOpenNamesFile
+			// 
+			this.btnOpenNamesFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnOpenNamesFile.Enabled = false;
+			this.btnOpenNamesFile.Location = new System.Drawing.Point(408, 101);
+			this.btnOpenNamesFile.Name = "btnOpenNamesFile";
+			this.btnOpenNamesFile.Size = new System.Drawing.Size(108, 23);
+			this.btnOpenNamesFile.TabIndex = 7;
+			this.btnOpenNamesFile.Text = "Open names file";
+			this.btnOpenNamesFile.UseVisualStyleBackColor = true;
+			this.btnOpenNamesFile.Click += new System.EventHandler(this.btnOpenNamesFile_Click);
+			// 
+			// btnOpenAddressFile
+			// 
+			this.btnOpenAddressFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnOpenAddressFile.Enabled = false;
+			this.btnOpenAddressFile.Location = new System.Drawing.Point(522, 101);
+			this.btnOpenAddressFile.Name = "btnOpenAddressFile";
+			this.btnOpenAddressFile.Size = new System.Drawing.Size(104, 23);
+			this.btnOpenAddressFile.TabIndex = 7;
+			this.btnOpenAddressFile.Text = "Open Address file";
+			this.btnOpenAddressFile.UseVisualStyleBackColor = true;
+			this.btnOpenAddressFile.Click += new System.EventHandler(this.btnOpenAddressFile_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(638, 130);
+			this.ClientSize = new System.Drawing.Size(638, 158);
+			this.Controls.Add(this.btnOpenAddressFile);
+			this.Controls.Add(this.btnOpenNamesFile);
 			this.Controls.Add(this.ssStatusStrip);
 			this.Controls.Add(this.btnProcess);
 			this.Controls.Add(this.btnBrowseOutputFolder);
@@ -215,6 +243,8 @@
 		private System.Windows.Forms.OpenFileDialog dlgOpenSourceFile;
 		private System.Windows.Forms.ToolStripStatusLabel tsSpring;
 		private System.ComponentModel.BackgroundWorker bwFileProcessor;
+		private System.Windows.Forms.Button btnOpenNamesFile;
+		private System.Windows.Forms.Button btnOpenAddressFile;
 	}
 }
 
