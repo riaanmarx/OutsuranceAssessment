@@ -412,6 +412,7 @@ namespace OutsuranceAssesment
 		{
 			// construct the output file path
 			string filePath = Path.Combine(tbOuputFolder.Text, OUTPUTPATH_NAMES);
+			// Open the output file in the user's preferred text editor
 			LaunchFile(filePath);
 		}
 
@@ -424,6 +425,7 @@ namespace OutsuranceAssesment
 		{
 			// construct the output file path
 			string filePath = Path.Combine(tbOuputFolder.Text, OUTPUTPATH_ADDRESSES);
+			// Open the output file in the user's preferred text editor
 			LaunchFile(filePath);
 		}
 		#endregion
