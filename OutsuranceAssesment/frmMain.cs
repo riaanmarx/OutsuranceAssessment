@@ -25,7 +25,6 @@ namespace OutsuranceAssesment
 		const string OUTPUTPATH_ADDRESSES = "Output2.txt";
 		#endregion
 
-
 		#region // Form constructor ...
 		public frmMain()
 		{
